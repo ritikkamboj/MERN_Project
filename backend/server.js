@@ -4,13 +4,20 @@ const app = express();
 
 const mongoose = require("mongoose");
 
+const dotenv = require('dotenv');
+dotenv.config();
+
+
 mongoose
-    .connect("mongodb://127.0.0.1:27017/merndb")
+    .connect(process.env.URI)
     .then(() => {
         console.log("Connected Successfully")
 
-        app.listen(4000, () => {
-            console.log("server is running ");
+        app.listen(process.env.PORT || 5000, (err) => {
+            if (err)
+                console.log(err.message);
+
+            console.log("server is running ", process.env.PORT);
         });
 
     })
