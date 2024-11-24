@@ -9,7 +9,8 @@ const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const cors = require('cors');
 
-app.use(cors())
+app.use(cors({ origin: "https://mern-project-f9ol.vercel.app" }));
+
 
 
 dotenv.config();
