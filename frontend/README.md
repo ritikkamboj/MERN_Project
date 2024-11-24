@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+How to Fix It:
+To make the frontend folder part of your main repository:
+
+Delete the .git folder inside frontend:
+
+Go to the frontend folder and remove the .git folder:
+bash
+Copy code
+rm -rf frontend/.git
+Re-add the folder to the main repository:
+
+After deleting the .git folder, frontend will no longer be treated as a submodule.
+Add it to your main repository:
+bash
+Copy code
+git add frontend/
+git commit -m "Added frontend folder as part of the main repo"
+git push origin <branch-name>
+This way, frontend will now behave like a normal folder under your main repository, and you won’t see the submodule arrow on GitHub.
