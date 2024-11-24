@@ -22,13 +22,16 @@ function Create() {
     };
     console.log("jai ");
     try {
-      const response = await fetch("http://localhost:8000/newUser", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newData),
-      });
+      const response = await fetch(
+        "https://mern-project-sable.vercel.app/newUser",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newData),
+        }
+      );
 
       console.log(response);
       if (!response.ok) {

@@ -18,9 +18,12 @@ function Read() {
   }
 
   async function handleDelete(id) {
-    const response = await fetch(`http://localhost:8000/delUser/${id}`, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      `https://mern-project-sable.vercel.app/delUser/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     console.log(response);
 
     if (!response.ok) {

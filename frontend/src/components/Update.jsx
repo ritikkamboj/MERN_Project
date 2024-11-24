@@ -41,13 +41,16 @@ function Update() {
     };
     console.log("jai ");
 
-    const response = await fetch(`http://localhost:8000/updateUser/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedData),
-    });
+    const response = await fetch(
+      `https://mern-project-sable.vercel.app/updateUser/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
+      }
+    );
 
     console.log(response);
     if (!response.ok) {
